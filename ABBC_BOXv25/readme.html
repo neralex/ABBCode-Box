@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html><head>
+<title>READ ME - Advanced BBCode Box for RavenNuke v2.5</title>
+<meta charset="UTF-8">
+<meta name="description" content="" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" src="demofiles/js/prettify.js"></script>                                   <!-- PRETTIFY -->
+<script type="text/javascript" src="demofiles/js/kickstart.js"></script>                                  <!-- KICKSTART -->
+<script type="text/javascript" src="demofiles/js/jquery.magnifier.0.2.js"></script>
+<script type="text/javascript">
+jQuery(function($) 
+{
+	$('a.magnify').magnify({lensWidth:150, lensHeight:150, link:false, delay:100});
+});
+</script>
+<link rel="stylesheet" type="text/css" href="demofiles/css/kickstart.css" media="all" />                  <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="demofiles/style.css" media="all" />                          <!-- CUSTOM STYLES -->
+<style type="text/css">
+#dio-lens{
+	border:1px solid #000;
+	z-index: 10000;
+}
+
+#dio-sensor{
+	z-index: 11000;
+	cursor:crosshair;
+}
+
+#dio-loader{
+	background:#fff url('demofiles/preloader.gif') no-repeat center 40px;	
+	text-indent:-30000px;
+}
+a.postlink{padding:1px 0 1px 20px;max-height:16px;height:16px;background:transparent url(root/mods/bbcode_box/images/global_telecom.png) no-repeat}
+a[href*="trickedoutnews.com"].postlink{background:transparent url(root/mods/bbcode_box/sites/ton.png) no-repeat}
+a[href*="wikipedia.org"].postlink{background:transparent url(root/mods/bbcode_box/sites/wikepedia.png) no-repeat}
+a[href*="ravennuke.com"].postlink,a[href*="ravenphpscripts.com"].postlink{background:transparent url(root/mods/bbcode_box/sites/raven.png) no-repeat}
+a[href*="facebook.com"].postlink{background:transparent url(root/mods/bbcode_box/sites/facebook.png) no-repeat}
+a[href*="fontsquirrel.com"].postlink{background:transparent url(root/mods/bbcode_box/sites/fontsquirrel.png) no-repeat}
+a[href*="icondock.com"].postlink{background:transparent url(root/mods/bbcode_box/sites/icondock.png) no-repeat}
+a[href*="stackoverflow.com"].postlink{background:transparent url(root/mods/bbcode_box/sites/stackoverflow.png) no-repeat}
+</style>
+<link rel="shortcut icon" href="demofiles/favicon.ico" type="image/x-icon" />
+</head><body><a id="top-of-page"></a><div id="wrap" class="clearfix">
+<!-- ===================================== END HEADER ===================================== -->
+
+	 <!-- Menu Horizontal -->
+	<ul class="menu">
+	<li class="current"><a href="readme.html"><span class="icon" data-icon="o"></span>Introduction</a></li>
+	<li><a href="demofiles/install.html"><span class="icon" data-icon="W"></span>Install Part I</a></li>
+	<li><a href="demofiles/install-part2.html"><span class="icon" data-icon="W"></span>Install Part II</a></li>
+	<li><a href="demofiles/addons.html"><span class="icon" data-icon="R"></span>Addons</a></li>
+	<li><a href="demofiles/customize.html"><span class="icon" data-icon="Z"></span>Customization</a></li>
+	<li><a href="demofiles/faq.html"><span class="icon" data-icon="n"></span>FAQ</a></li>
+	</ul>
+	 
+<div class="col_12">
+	<div class="col_12">
+	<a href="demofiles/abbc-boxLG.png" class="magnify"><img class="align-right" src="demofiles/abbc-boxSM.png" width="179" height="250" /></a>
+	<h3 id="abbc25">Advanced BBCode Box for RavenNuke&#153; v2.5</h3>
+	<p>PHPBB2 Forum BBCode Modification for <a class="postlink" href="http://www.ravennuke.com/" target="_blank">RavenNuke</a>&#153; v2.5, which expands the standard BBCode features to allow: audio/video embeds, text formatting/styling options, image/video positioning, dynamic twitter signatures, customizable color swatches, inline ajax help, forum search &quot;tags&quot;, modal search functions for wikipedia and duckduckgo, as well as various other features.</p>
+	<p>Improved UI and CSS layout which can be customized per theme. Four sprite powered editor themes included in sand, light blue, crimson, and black; or build your own with a little CSS know-how and the included photoshop files.</p>
+	<p>Several optional addons are included to further enhance your <a class="postlink" href="http://www.ravennuke.com/" target="_blank">RavenNuke</a>&#153; powered site; which allows you to add code highlighting, link icons, easy youtube videos, and/or hashtags.</p>
+	<p>After an easy installation, courtesy of a comprehensive, kickstart powered install guide, you may find yourself asking, &quot;Who needs phpbb3?&quot; <span class="icon" data-icon="K"></span></p>
+	</div>
+	
+	<div class="col_3 center"><a href="demofiles/black.jpg" class="magnify"><img src="demofiles/black.png" height="90" alt="black" /></a></div>
+<div class="col_3 center"><a href="demofiles/lightblue.jpg" class="magnify"><img src="demofiles/lightblue.png" height="90" alt="lightblue" /></a></div>
+<div class="col_3 center"><a href="demofiles/crimson.jpg" class="magnify"><img src="demofiles/crimson.png" height="90" alt="crimson" /></a></div>
+<div class="col_3 center"><a href="demofiles/sand.jpg" class="magnify"><img src="demofiles/sand.png" height="90" alt="sand" /></a></div>
+
+	<div class="col_12">
+	<a class="btn large blue" href="#newfeet"><span class="icon" data-icon="?"></span>Tell Me More!</a> <a class="btn large green" href="demofiles/install.html"><span class="icon" data-icon="R"></span>I'll Read This Later, Let's Get Started with the Installation!</a>
+	<br/>&nbsp;<br/>
+	<h4 id="newfeet">New Features</h4>
+	
+	<h5>Improved UI, CSS Layout, and CSS Sprites</h5>
+	<img class="align-right" src="demofiles/sprites.png" width="482" height="33" />
+	<p>Editor Toolbars are styled completely via CSS, allowing the editor to be styled to match individual themes and break-out of the MS-Word 2003 look. All images within the editor now use CSS sprites, with many buttons featuring mouseover and toggle effects. The majority of toolbars are hidden initially, and are toggled into view by one of the visible buttons; with a nice jQuery SlideToggle animation.</p>
+	
+	<h5>Text Size Selection</h5>
+	<img class="align-right" src="demofiles/buttons.png" width="482" height="33" />
+	<p>Font size selection now uses buttons instead of a select menu, and also utilizes CSS classes instead of inline styling. In most cases relative sizes are used, which offers greater flexibility regardless of the initial default font-size that a given theme/visitor is using. Another advantage of using buttons, is that previously the same text size could not be applied more than once in a row; as the bbcode was only inserted when the value of the select menu changed. Sample: <code>[class="small"][/class}</code> </p>
+	
+	<h5>Font Type and Custom Classes</h5>
+	<img class="align-right" src="demofiles/classes.png" width="482" height="33" />
+	<p>Font type selection also uses buttons instead of a select menu, utilizing CSS classes instead of inline styling. 
+	Basic font classes are defined to display the most similar font regardless of operating system or browser, as not all 
+	fonts are actually available on all operating systems. Font declarations can be overridden by theme, so if you prefer 
+	to replace a button with a custom font (like those from <a class="postlink" href="http://www.fontsquirrel.com/fontface" target="_blank">font squirrel</a>) you can!</p>
+	
+	<h5>Size and Positioning Options for Multimedia Embeds</h5>
+	<img class="align-right" src="demofiles/wizards.png" width="482" height="33" />
+	<p>A variety of size and positioning options have been added for YouTube and (the newly added) Internet Archive video embeds. Both embed types utilize the 
+	iframe method, which allows for device specific videos to be delivered to the user. This means the user may get a html5 or flash video depending on the capabilities of	
+	the given device viewing the site. Size and positioning options are CSS based and can be customized by theme</p>
+	
+	<h5>Custom Color Swatches and Color Picker</h5>
+	<img class="align-right" src="demofiles/colors.png" width="482" height="33" />
+	<p>The color select menu has been replaced by swatches that can be customized by theme. For example, there is no reason to offer black text if your theme uses black backgrounds. Also offers the advantage of matching the color palette to an individual theme, as dark colors work better for light backgrounds, and pastel colors work better for dark backgrounds. Custom hex colors can be applied via the newly added jscolor color picker. Sample: <code>[class="color1"][/class]</code></p>
+	
+	<h5>Various New Features</h5>
+	<img class="align-right" src="demofiles/various.png" width="482" height="33" />
+	<p>While not a complete overview, just a few of the new features available in ABBC2.5</p>
+	<ul>
+	<li>Float an Image to the Left <code>[imgleft]http://yoursite.com/image.jpg[/imgleft]</code></li>
+	<li>Float an Image to the Right <code>[imgright]http://yoursite.com/image.jpg[/imgright]</code></li>
+	<li>DuckDuckGo Web Search in Modal <code>[duck]your search term[/duck]</code></li>
+	<li>Wikipedia Search in Modal <code>[wiki]your search term[/wiki]</code></li>
+	<li>International Wikipedia Search in Modal <code>[wiki=es]suerte[/wiki]</code></li>
+	<li>Forums Search/Keyword Tag <code>[tag]forum search term[/tag]</code></li>
+	<li>Dynamic Twitter Signature <code>[twitter]username[/twitter]</code></li>
+	<li>Internet Archive (audio) <code>[archive="audio"]http://archive.org/details/MozartEineKleineNachtmusik[/archive]</code></li>
+	<li>Internet Archive (video) <code>[archive="video"]http://archive.org/details/night_of_the_living_dead[/archive]</code></li>
+	<li>Video Size <code>[youtube="video-large"]http://www.youtube.com/watch?v=lDxyJGMJ_P8[/youtube]</code></li>
+	<li>Video Position <code>[archive="video-center"]http://archive.org/details/the_brain_that_wouldnt_die[/archive]</code></li>
+	<li>Video Size &amp; Position <code>[youtube="video-small-left"]http://www.youtube.com/watch?v=lDxyJGMJ_P8[/youtube]</code></li>
+	</ul>
+	
+	<hr class="alt2" />
+	<h4 id="nonbb">Non-BBCode Features</h4>
+	<h5>Inline Ajax Help</h5>
+	<p>Several of the toolbars feature inline help which is loaded directly into the editor via ajax, giving users basic tips without having to open another browser window.</p>
+	
+	<h5>Full Width Padded Textarea</h5>
+	<p>A somewhat experimental 100% width cross-browser padded auto-expanding textarea (that's a mouthful), which is not an easy task due to the differences with how textareas are rendered by various browsers. A minimum and maximum height can be configured so that the textarea doesn't grow more than desired (default max 600px) as at some point the user would need to scroll anyway... (running out of visible space in the browser window)</p>
+	
+	<h5>Insert at Caret Position</h5>
+	<p>In order to perform more like an actual editor, all codes are now inserted at the <a class="postlink" target="_blank" href="http://en.wikipedia.org/wiki/Caret_navigation">caret position</a>; as well as updating the caret position code for smilies which did not work reliably in some browsers. Tested in browsers below.</p>
+	
+	<h5>Browser Compatibility</h5>	
+	<img width="31" height="30" class="align-right tooltip-top" title="Firefox" alt="Firefox" src="demofiles/compatible_firefox.gif">
+	<img width="31" height="30" class="align-right tooltip-top" title="Internet Explorer" alt="Internet Explorer" src="demofiles/compatible_ie.gif">
+	<img width="31" height="30" class="align-right tooltip-top" title="Google Chrome" alt="Google Chrome" src="demofiles/compatible_chrome.gif">
+	<img width="28" height="30" class="align-right tooltip-top" title="Safari" alt="Safari" src="demofiles/compatible_safari.gif">
+	<img width="28" height="30" class="align-right tooltip-top" title="Opera" alt="Opera" src="demofiles/compatible_opera.gif">
+	<p>Tested on Firefox (Win7,WinXP,Linux Mint), Internet Explorer 8-9 (WinXP,Win7), Google Chrome (WinXP,Win7), Safari (Win7), and Opera (Win7)</p>
+	
+	<hr class="alt2" />
+	<h4 id="deprecated">Deprecated Features</h4>
+	<h5>Features from Previous Versions of Advanced BBCode</h5>
+	<p>Several features from previous versions of Advanced BBCode Box have been removed from the editor, and can be optionally supported for backwards compatibility. Deprecated features include: <code>[fade][/fade]</code> <code>[marq=right][/marq]</code> <code>[font=Verdana][/font]</code>. Since Google Video is now only a search engine, support for <code>[GVideo][/GVideo]</code> has been removed. The iframe option <code>[web][/web]</code> was removed in previous versions and is no longer supported due to security concerns.</p>
+	<h5>Standard BBCode Features</h5>
+	<p>Some standard bbcode features are still supported but have been replaced within the editor with class based equivalents; such as <code>[size=14][/size]</code>. The <code>[color=red][/color]</code> bbcode is also still supported, but is used only for custom hex codes within the editor.</p>
+	
+	<hr class="alt2" />
+	<h4 id="optional">Optional Features</h4>
+	<div class="col_3">
+	<h5>highlight.js</h5>
+	<!-- Slideshow -->
+	<ul class="slideshow" width="180" height="150">
+	<li><img src="demofiles/code1.png" width="180" height="150" /></li>
+	<li><img src="demofiles/code2.png" width="180" height="150" /></li>
+	<li><img src="demofiles/code3.png" width="180" height="150" /></li>
+	</ul>
+	<h5>EasyIcons</h5>
+	<img src="demofiles/social.png" width="180" height="150" style="padding-bottom:8px" />
+	<h5>EasyTube</h5>
+	<img src="demofiles/easytube.png" width="180" height="150" style="padding-bottom:8px" />
+	<h5>#hashtags</h5>
+	<img src="demofiles/hashtag.png" width="180" height="150" />
+	</div>
+	
+	<div class="col_9">
+	<h5>Code Highlighting featuring Highlight</h5>
+	<p style="height:175px">Highlight.js highlights syntax in code examples on blogs, forums and in fact on any web pages. It's very easy to use because it works automatically: finds blocks of code, detects a language, highlights it. Growing assortment of <a class="postlink" href="http://softwaremaniacs.org/media/soft/highlight/test.html" target="_blank">CSS based themes</a> allows highlighting to be customized on a theme-by-theme basis. 16 languages are supported by default, although over 40 languages can be used if required by an individual site. The basic 16 valid classes are: apache, bash, cpp, cs, css, diff, html, ini, java, javascript, perl, php, python, ruby, sql, xml</p>
+	
+	<h5>Iconize Links to Desired Sites</h5>
+	<p style="height:155px;padding-bottom:8px">A purely CSS based addon which automatically adds icons to links, allowing for specific icons to be used for specific sites. Use the included <a class="postlink" href="http://icondock.com/free/vector-social-media-icons" target="_blank">Vector Social Media Icons</a> to &quot;Iconize&quot; as many popular social sites as desired; or create/find your own icons to &quot;Iconize&quot; your favorites sites from around the web. Easy to add sites and customize to your needs. Intended for use in the forums, but can be used sitewide if desired.</p>
+	<h5>Easy YouTube Video Embeds</h5>
+	<p style="height:155px;padding-bottom:8px">Let's face it, users are lazy or don't necessarily always understand how to use bbcode. So why not allow for easy embedding of youtube videos by simply including the URL to the video, with no extra markup required? Enter the EasyTube Mod to add auto-embed support for over a dozen popular youtube URL's. Special thanks to <a class="postlink" href="http://www.ravenphpscripts.com/forums-profile-viewprofile-u-18475.html" target="_blank">eldorado</a> for the idea and getting the ball rolling on implementation, and to <a class="postlink" href="http://stackoverflow.com/questions/5830387/php-regex-find-all-youtube-video-ids-in-string" target="_blank">ridgerunner</a> for writing and maintaining an excellent regular expression suited for the job.</p>
+	<h5>Tricked Out News #hashtag Mod</h5>
+	<p style="height:155px">Adds a Twitter like hashtag mod for your <a class="postlink" href="http://www.ravennuke.com/" target="_blank">RavenNuke</a>&#153; forum. If you are not familiar with hashtags, they are any SINGLE word that you place the # sign in front of, to link to a keyword search in the forum. Although it functions in a similar manner to that of the newly added <code>[tag]term[/tag]</code> it makes a nice shorthand compliment for quickly tagging desired posts. Not to mention, installation only requires one additional line of code! Thanks <a class="postlink" href="http://trickedoutnews.com/" target="_blank">nuken</a>!</p>
+	
+	</div>	<hr />
+	<a class="btn large green" href="demofiles/install.html"><span class="icon" data-icon="z"></span>Get Started with the Installation</a>
+	</div>
+	
+	<hr />
+	<div class="col_4">
+	<h6>ABBC Box</h6>
+	<a href="demofiles/customize.html#devs" class="tooltip" title="Poochy needs a doggie wheelchair"><img class="align-left" src="demofiles/mini-poochy.png" alt="Poochy" width="35" height="64" /></a>
+	<p><strong>If you find this mod useful please show your support with a small <a href="demofiles/customize.html#devs">donation</a> for Poochy</strong></p>
+	<p>Special thanks to the original authors of ABBC Box</p>
+	<p><a href="http://www.hvmdesign.com" target="_blank">Disturbed One</a> (Anthony Coy)<br />
+	<a href="http://www.tnen.zzn.com" target="_blank">AL Tnen</a> (N/A)<br />
+	<a href="http://www.tactic.be" target="_blank">freddie</a> (Stefaan Van Damme)</p>
+	<p>As well as many others who have contributed over time</p>
+	<h6>Browser Support</h6>
+	<p>
+	<img width="31" height="30" class="tooltip-top" title="Internet Explorer" alt="Internet Explorer" src="demofiles/compatible_ie.gif">
+	<img width="31" height="30" class="tooltip-top" title="Firefox" alt="Firefox" src="demofiles/compatible_firefox.gif">
+	<img width="28" height="30" class="tooltip-top" title="Opera" alt="Opera" src="demofiles/compatible_opera.gif">
+	<img width="31" height="30" class="tooltip-top" title="Google Chrome" alt="Google Chrome" src="demofiles/compatible_chrome.gif">
+	<img width="28" height="30" class="tooltip-top" title="Safari" alt="Safari" src="demofiles/compatible_safari.gif">
+	</p>
+	</div>
+	
+	<div class="col_5">
+
+	<h6>Featuring</h6>
+	<ul class="checks">
+	<li><a href="http://www.sitepoint.com/build-auto-expanding-textarea-1/" target="_blank">Auto Expanding Textarea</a>
+		<ul class="alt">
+		<li>By Craig Buckler, Optimalworks.net</li>
+		</ul>
+	</li>
+	<li><a href="http://jscolor.com/" target="_blank">Javascript Color Picker</a>
+		<ul class="alt">
+		<li>JScolor native javascript color picker</li>
+		</ul>
+	</li>
+	<li><a href="http://www.fatcow.com/free-icons" target="_blank">FatCow Hosting Icons</a>
+		<ul class="alt">
+		<li>Huge free icon set</li>
+		</ul>
+	</li>
+	<li><a href="http://icondock.com/free/vector-social-media-icons" target="_blank">Vector Social Media Icons</a>
+		<ul class="alt">
+		<li>by IconDock.com &amp; Double-J Design</li>
+		</ul>
+	</li>
+	</ul>
+	</div>
+	
+	<div class="col_3">
+	<h6>Release History</h6>
+	<ul class="checks">
+	<li>Version RN2.50 (2012)</li>
+	<li>Version RN24_01 (2010)</li>
+	<li>Version RN2.30 (2008)</li>
+	<li>Version 5.1.0c (2007)</li>
+	<li>Version 5.0.0 (2005)</li>
+	<li>Version 5.0.0 (2005)</li>
+	<li>Version 5.0.0 (2005)</li>
+	<li>Version 5.1.0 (2007)</li>
+	<li>Version 5.0.0a (2005)</li>
+	<li>Version 5.0.0 (2005)</li>
+	</ul>
+	</div>
+</div>
+<!-- ===================================== START FOOTER ===================================== -->
+<div class="clear"></div>
+<div id="footer">
+&copy; Copyright 2004–2012 All Rights Reserved. This Install Guide was built with <a href="http://www.99lime.com">HTML KickStart</a><br/>
+Advanced BBCode Box RN 2.5 by Jason Tate aka SpasticDonkey.<br/>
+Background Image By Alchemist-hp [<a href="http://artlibre.org/licence/lal/en">FAL</a>] via <a href="http://commons.wikimedia.org/wiki/File%3ALake_Bondhus_Norway_2862.jpg">Wikimedia Commons</a>
+<p><a class="btn blue" href="http://www.facebook.com/AdvancedBBCodeBoxForRavenNuke"><span class="icon social" data-icon="F"></span> Like ABBC Box on Facebook</a></p>
+<a id="link-top" href="#top-of-page">Top</a>
+</div>
+
+</div><!-- END WRAP -->
+</body></html>

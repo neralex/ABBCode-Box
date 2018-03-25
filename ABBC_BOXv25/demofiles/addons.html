@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html><head>
+<title>Addons - Advanced BBCode Box for RavenNuke v2.5</title>
+<meta charset="UTF-8">
+<meta name="description" content="" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" src="js/prettify.js"></script>                                   <!-- PRETTIFY -->
+<script type="text/javascript" src="js/kickstart.js"></script>                                  <!-- KICKSTART -->
+<script type="text/javascript" src="js/jquery.magnifier.0.2.js"></script>
+<script type="text/javascript">
+function SelectText(element) {
+    var doc = document;
+    var text = doc.getElementById(element);    
+    if (doc.body.createTextRange) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        var selection = window.getSelection();        
+        var range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+function demos() {
+	alert("These links don't do anything, just used to illustrate the file path for the edit");
+}
+jQuery(function($) 
+{
+	$('a.magnify').magnify({lensWidth:150, lensHeight:150, link:false, delay:100});
+});
+</script>
+<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />                  <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="style.css" media="all" />                          <!-- CUSTOM STYLES -->
+<style type="text/css">
+#dio-lens{
+	border:1px solid #000;
+	z-index: 10000;
+}
+
+#dio-sensor{
+	z-index: 11000;
+	cursor:crosshair;
+}
+
+#dio-loader{
+	background:#fff url('preloader.gif') no-repeat center 40px;	
+	text-indent:-30000px;
+}
+a.postlink{padding:1px 0 1px 20px;max-height:16px;height:16px;background:transparent url(../root/mods/bbcode_box/images/global_telecom.png) no-repeat}
+a[href*="trickedoutnews.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/ton.png) no-repeat}
+a[href*="clanthemes.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/ct.png) no-repeat}
+a[href*="code-authors.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/guardian.png) no-repeat}
+a[href*="ravennuke.com"].postlink,a[href*="ravenphpscripts.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/raven.png) no-repeat}
+a[href*="montegoscripts.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/montego.png) no-repeat}
+a[href*="nukeseo.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/nukeseo.png) no-repeat}
+a[href*="facebook.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/facebook.png) no-repeat}
+a[href*="google.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/google.png) no-repeat}
+a[href*="amazon.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/amazon.png) no-repeat}
+a[href*="ebay.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/ebay.png) no-repeat}
+a[href*="aol.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/aol.png) no-repeat}
+a[href*="about.me"].postlink{background:transparent url(../root/mods/bbcode_box/sites/aboutme.png) no-repeat}
+a[href*="apple.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/apple.png) no-repeat}
+a[href*="bebo.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/bebo.png) no-repeat}
+a[href*="linkedin.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/linkedin.png) no-repeat}
+a[href*="tumblr.com"].postlink{background:transparent url(../root/mods/bbcode_box/sites/tumblr.png) no-repeat}
+</style>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head><body><a id="top-of-page"></a><div id="wrap" class="clearfix">
+<!-- ===================================== END HEADER ===================================== -->
+
+
+	<!-- 
+	
+		ADD YOU HTML ELEMENTS HERE
+		
+		Example: 2 Columns
+	 -->
+	 <!-- Menu Horizontal -->
+	<ul class="menu">
+	<li><a href="../readme.html"><span class="icon" data-icon="o"></span>Introduction</a></li>
+	<li><a href="install.html"><span class="icon" data-icon="W"></span>Install Part I</a></li>
+	<li><a href="install-part2.html"><span class="icon" data-icon="W"></span>Install Part II</a></li>
+	<li class="current"><a href="addons.html"><span class="icon" data-icon="R"></span>Addons</a></li>
+	<li><a href="customize.html"><span class="icon" data-icon="Z"></span>Customization</a></li>
+	<li><a href="faq.html"><span class="icon" data-icon="n"></span>FAQ</a></li>
+	</ul>
+	 
+<div class="col_12">
+	
+	<div class="col_12">
+	<a href="abbc-boxLG.png" class="magnify"><img class="align-right" src="abbc-boxSM.png" width="179" height="250" /></a>
+	<h2 id="addons">Optional Addons</h2>
+	<p>Take a moment to look over the selection of optional addons which should be installed prior to proceeding to the final step of installation. This assumes you have completed <a href="install.html">step one</a> and <a href="install-part2.html">step two</a> of installation and the mod is working in all active themes. There are a handful of troubleshooting tips available in the <a href="faq.html">FAQ</a> if you are having issues.</p>
+	<hr class="alt1" />
+	<h3><span class="icon large" data-icon="G"></span> Code Highlighting featuring Highlight</h3>
+	<p>16 languages are supported by default, although over 40 languages can be used if required by an individual site. The basic 16 valid classes are: apache, bash, cpp, cs, css, diff, html, ini, java, javascript, perl, php, python, ruby, sql, xml</p>
+	
+	<h4>Install</h4>
+	<div class="notice success"><span class="icon medium" data-icon=")"></span> Upload all files within <code>ABBC_BOXv25/extras/Highlighter/root</code> to <code>yoursite.com/</code> <a href="#close" class="icon close" data-icon="x"></a></div>
+	
+	<div style="border: 1px dashed #cccccc;padding-left:10px;margin-bottom:20px">
+	<ul class="breadcrumbs alt1">
+	<li><a href="javascript:demos();"><span class="tooltip" title="Your Server">yoursite.com</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="includes Directory">includes</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="addons Directory">addons</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="File To Edit">head-abbcbox.php</span></a></li>
+	</ul>
+	</div>
+	<h5><span class="icon small darkgray" data-icon="s"></span> Find <a class="small button" onclick="SelectText('highlight1')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="highlight1">$UseCodeHighligher = false; // enables code highlighting</pre>
+	<h5><span class="icon small darkgray" data-icon="^"></span> Change To <a class="small button" onclick="SelectText('highlight2')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="highlight2">$UseCodeHighligher = true; // enables code highlighting</pre>
+	<button class="small green"><span class="icon" data-icon="o"></span> Edit Complete</button> <button class="small blue"><span class="icon" data-icon="c"></span> Save File</button> <button class="small orange"><span class="icon" data-icon=")"></span> Upload File</button> 
+	
+	<p>At this point code highlighting should be functional with the default highlight style. To use a custom highlight style for your theme, simply rename the desired style (located at includes/jquery/styles/) to <code>highlight.css</code> and upload to the style directory of your theme. Note that if your highlighting style uses images (a couple do) make sure to adjust image paths within the newly created <code>highlight.css</code> accordingly (required images are also located at includes/jquery/styles/).</p>
+	<p>If you are using either the <code>Blue_Blog</code> and/or <code>CT_RN</code> themes, an example <code>highlight.css</code> file for those themes is provided at:<br />
+	<code>ABBC_BOXv25/extras/Highlighter/Theme_Specific_Styles/themes</code></p>
+	<p>Note that the other default RN themes all use the default highlighting style. See <a href="customize.html">Customization</a> for more tips regarding code highlighting; as well as some important notes regarding browser compatibility and styling.</p>
+	
+	<button class="small red"><span class="icon" data-icon="!"></span> Mod Complete</button>
+	
+	<hr class="alt1" />
+	<h3><span class="icon large" data-icon="R"></span> Iconize Links to Desired Sites</h3>
+	<p>A purely CSS based addon which automatically adds icons to links, allowing for specific icons to be used for specific sites. Use the included <a href="http://icondock.com/free/vector-social-media-icons" target="_blank">Vector Social Media Icons</a> to &quot;Iconize&quot; as many popular social sites as desired; or create/find your own icons to &quot;Iconize&quot; your favorites sites from around the web. Easy to add sites and customize to your needs. Intended for use in the forums, but can be used sitewide if desired. Note that some tweaking of line-height or font-size may be required, and that 16px icons will not work well if your font-size is too small.</p>
+	<!-- Fieldset -->
+	<fieldset>
+	<legend>Demo</legend>
+	Demo demo demonstration <a class="postlink" href="http://www.trickedoutnews.com" target="_blank">trickedoutnews.com</a> demo demonstration <a class="postlink" href="http://www.code-authors.com" target="_blank">code-authors.com</a> demo demonstration demo demonstration <a class="postlink" href="http://www.ravennuke.com" target="_blank">ravennuke.com</a> demo demo demonstration <a class="postlink" href="http://www.facebook.com" target="_blank">facebook.com</a> demo demonstration <a class="postlink" href="http://www.montegoscripts.com" target="_blank">montegoscripts.com</a> demo demonstration demo <a class="postlink" href="http://about.me/jestrella04" target="_blank">jestrella04</a> demonstration <a class="postlink" href="http://nukeseo.com" target="_blank">nukeseo.com</a> .
+	</fieldset>
+	
+	<h4>Install</h4>
+	<p>CSS declarations (and minor edit) need to be applied to <strong>all copies</strong> of <code>bbcode_addons.css</code> which you have uploaded to your site. The number of copies will vary depending on how many themes you have installed and their configuration. Note there is a slight difference to the edit if applying to <code>themes/ANY_THEME/style/bbcode_addons.css</code> (<a href="#optionA">option a</a>) as opposed to <code>mods/bbcode_box/bbcode_addons.css</code> (<a href="#optionB">option b</a>); as the path to the image files needs to be adjusted. If you want to apply this sitewide be aware these stylesheets only load within the Private Message and Forums modules, so you would need to move code to your style.css. You also must use class postlink on all links you want icons on, read the note <a href="#thenote">below</a> for more info.</p>
+	
+	<h5 id="optionA">OPTION A</h5>
+	<div style="border: 1px dashed #cccccc;padding-left:10px;margin-bottom:20px">
+	<ul class="breadcrumbs alt1">
+	<li><a href="javascript:demos();"><span class="tooltip" title="Your Server">yoursite.com</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="themes Directory">themes</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="Any Active Theme">ANY_THEME</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="style Directory">style</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="File To Edit">bbcode_addons.css</span></a></li>
+	</ul>
+	</div>
+	<h5><span class="icon small darkgray" data-icon="s"></span> Find <a class="small button" onclick="SelectText('optionA1')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="optionA1">a.postlink.ficon{padding:1px 0 1px 20px;max-height:16px;height:16px;background:transparent url(../../../mods/bbcode_box/images/global_telecom.png) no-repeat}</pre>
+	<p>Note that this is the default icon for ALL links (of the class postlink) that do not have a custom icon.. Change as desired.</p>
+	<h5><span class="icon small darkgray" data-icon="^"></span> Change To <a class="small button" onclick="SelectText('optionA2')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="optionA2">a.postlink{padding:1px 0 1px 20px;max-height:16px;height:16px;background:transparent url(../../../mods/bbcode_box/images/global_telecom.png) no-repeat}</pre>
+	<h5><span class="icon small darkgray" data-icon="s"></span> Find <a class="small button" onclick="SelectText('optionA3')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="optionA3">a.postlink.wiki:after{content: " (" attr(rel) ") ";font-size:smaller}</pre>
+	<p>Note that this is just an example and should be customized for the sites that you actually want to have custom icons for. See <code>mods/bbcode_box/sites</code> for a ton of included icons, or customize/find your own. Make sure to edit the urls to correspond with the correct icons, noting that the url segment has to appear somewhere within the href attribute.</p>
+	<h5><span class="icon small darkgray" data-icon="+"></span> After Add (on a new line) <a class="small button" onclick="SelectText('optionA4')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="optionA4">
+a[href*="trickedoutnews.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/ton.png) no-repeat}
+a[href*="clanthemes.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/ct.png) no-repeat}
+a[href*="code-authors.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/guardian.png) no-repeat}
+a[href*="ravennuke.com"].postlink,a[href*="ravenphpscripts.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/raven.png) no-repeat}
+a[href*="montegoscripts.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/montego.png) no-repeat}
+a[href*="nukeseo.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/nukeseo.png) no-repeat}
+a[href*="facebook.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/facebook.png) no-repeat}
+a[href*="google.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/google.png) no-repeat}
+a[href*="amazon.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/amazon.png) no-repeat}
+a[href*="ebay.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/ebay.png) no-repeat}
+a[href*="aol.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/aol.png) no-repeat}
+a[href*="about.me"].postlink{background:transparent url(../../../mods/bbcode_box/sites/aboutme.png) no-repeat}
+a[href*="apple.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/apple.png) no-repeat}
+a[href*="bebo.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/bebo.png) no-repeat}
+a[href*="linkedin.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/linkedin.png) no-repeat}
+a[href*="tumblr.com"].postlink{background:transparent url(../../../mods/bbcode_box/sites/tumblr.png) no-repeat}</pre>
+	<p id="thenote">Note that it will only add icons to links of the class postlink, and it is not recommended to remove that requirement. For instance:</p>
+	<pre id="optionB4">a[href*="google.com"]{background:transparent url(../../../mods/bbcode_box/sites/google.png) no-repeat}</pre>
+	<p>Would add icons to ALL links to Google on your site, which could add them where you don't want them.. such as Google ads, Google+, or links that do not use text (images).</p>
+	<button class="small green"><span class="icon" data-icon="o"></span> Edit Complete</button> <button class="small blue"><span class="icon" data-icon="c"></span> Save File</button> <button class="small orange"><span class="icon" data-icon=")"></span> Upload File</button> <button class="small red"><span class="icon" data-icon="!"></span> Repeat as Needed</button>
+	<hr class="alt1" />
+	
+	<h5 id="optionB">OPTION B</h5>
+	<div style="border: 1px dashed #cccccc;padding-left:10px;margin-bottom:20px">
+	<ul class="breadcrumbs alt1">
+	<li><a href="javascript:demos();"><span class="tooltip" title="Your Server">yoursite.com</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="mods Directory">mods</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="bbcode_box Directory">bbcode_box</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="File To Edit">bbcode_addons.css</span></a></li>
+	</ul>
+	</div>
+	<h5><span class="icon small darkgray" data-icon="s"></span> Find <a class="small button" onclick="SelectText('optionB1')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="optionB1">a.postlink.ficon{padding:1px 0 1px 20px;max-height:16px;height:16px;background:transparent url(images/global_telecom.png) no-repeat}</pre>
+	<p>Note that this is the default icon for ALL links (of the class postlink) that do not have a custom icon.. Change as desired.</p>
+	<h5><span class="icon small darkgray" data-icon="^"></span> Change To <a class="small button" onclick="SelectText('optionB2')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="optionB2">a.postlink{padding:1px 0 1px 20px;max-height:16px;height:16px;background:transparent url(images/global_telecom.png) no-repeat}</pre>
+	<h5><span class="icon small darkgray" data-icon="s"></span> Find <a class="small button" onclick="SelectText('optionB3')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="optionB3">a.postlink.wiki:after{content: " (" attr(rel) ") ";font-size:smaller}</pre>
+	<p>Note that this is just an example and should be customized for the sites that you actually want to have custom icons for. See <code>mods/bbcode_box/sites</code> for a ton of included icons, or customize/find your own. Make sure to edit the urls to correspond with the correct icons, noting that the url segment has to appear somewhere within the href attribute.</p>
+	<h5><span class="icon small darkgray" data-icon="+"></span> After Add (on a new line) <a class="small button" onclick="SelectText('optionB4')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="optionB4">
+a[href*="trickedoutnews.com"].postlink{background:transparent url(sites/ton.png) no-repeat}
+a[href*="clanthemes.com"].postlink{background:transparent url(sites/ct.png) no-repeat}
+a[href*="code-authors.com"].postlink{background:transparent url(sites/guardian.png) no-repeat}
+a[href*="ravennuke.com"].postlink,a[href*="ravenphpscripts.com"].postlink{background:transparent url(sites/raven.png) no-repeat}
+a[href*="montegoscripts.com"].postlink{background:transparent url(sites/montego.png) no-repeat}
+a[href*="nukeseo.com"].postlink{background:transparent url(sites/nukeseo.png) no-repeat}
+a[href*="facebook.com"].postlink{background:transparent url(sites/facebook.png) no-repeat}
+a[href*="google.com"].postlink{background:transparent url(sites/google.png) no-repeat}
+a[href*="amazon.com"].postlink{background:transparent url(sites/amazon.png) no-repeat}
+a[href*="ebay.com"].postlink{background:transparent url(sites/ebay.png) no-repeat}
+a[href*="aol.com"].postlink{background:transparent url(sites/aol.png) no-repeat}
+a[href*="about.me"].postlink{background:transparent url(sites/aboutme.png) no-repeat}
+a[href*="apple.com"].postlink{background:transparent url(sites/apple.png) no-repeat}
+a[href*="bebo.com"].postlink{background:transparent url(sites/bebo.png) no-repeat}
+a[href*="linkedin.com"].postlink{background:transparent url(sites/linkedin.png) no-repeat}
+a[href*="tumblr.com"].postlink{background:transparent url(sites/tumblr.png) no-repeat}</pre>
+	<p>Note that it will only add icons to links of the class postlink, and it is not recommended to remove that requirement. For instance:</p>
+	<pre id="optionB4">a[href*="google.com"]{background:transparent url(sites/google.png) no-repeat}</pre>
+	<p>Would add icons to ALL links to Google on your site, which could add them where you don't want them.. such as Google ads, Google+, or links that do not use text (images).</p>
+	<button class="small green"><span class="icon" data-icon="o"></span> Edit Complete</button> <button class="small blue"><span class="icon" data-icon="c"></span> Save File</button> <button class="small orange"><span class="icon" data-icon=")"></span> Upload File</button> <button class="small red"><span class="icon" data-icon="!"></span> Mod Complete</button>
+	<hr class="alt1" />
+	
+	<h3><span class="icon social large" data-icon="U"></span> Easy YouTube Video Embeds</h3>
+	<p>Let's face it, users are lazy or don't necessarily always understand how to use bbcode. So why not allow for easy embedding of youtube videos by simply including the URL to the video, with no extra markup required? Enter the EasyTube Mod to add auto-embed support for over a dozen popular youtube URL's. Special thanks to <a href="http://www.ravenphpscripts.com/forums-profile-viewprofile-u-18475.html" target="_blank">eldorado</a> for the idea and getting the ball rolling on implementation, and to <a href="http://stackoverflow.com/questions/5830387/php-regex-find-all-youtube-video-ids-in-string" target="_blank">ridgerunner</a> for writing and maintaining an excellent regular expression suited for the job.</p>
+
+	
+	<h4>Install</h4>
+	<div style="border: 1px dashed #cccccc;padding-left:10px;margin-bottom:20px">
+	<ul class="breadcrumbs alt1">
+	<li><a href="javascript:demos();"><span class="tooltip" title="Your Server">yoursite.com</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="modules Directory">modules</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="Forums Directory">Forums</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="includes Directory">includes</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="File To Edit">bbcode.php</span></a></li>
+	</ul>
+	</div>
+	<p>PRE-EDITED file available at <code>extras/EasyTube/bbcode.php</code> which includes ABBC Mod plus EasyTube</p>
+	<h5><span class="icon small darkgray" data-icon="s"></span> Find <a class="small button" onclick="SelectText('easytube1')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="easytube1">function make_clickable($text)
+{
+	$text = preg_replace('#(script|about|applet|activex|chrome):#is', "\\1&amp;#058;", $text);
+
+	// pad it with a space so we can match things at the start of the 1st line.
+	$ret = ' ' . $text;</pre>
+	<h5><span class="icon small darkgray" data-icon="+"></span> After Add (on a new line) <a class="small button" onclick="SelectText('easytube2')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="easytube2">	
+	// look for youtube urls and create video embeds from them (by ridgerunner)
+	// http://stackoverflow.com/questions/5830387/php-regex-find-all-youtube-video-ids-in-string
+	// ** modified for use in forums
+	$ret = preg_replace('~
+	# Match non-linked youtube URL in the wild. (Rev:20111012)
+	(^|[\n ])         # match space or newline at start**
+	(?:https?://)?    # URL scheme. Either http or https.**
+	(?:[0-9A-Z-]+\.)? # Optional subdomain.
+	(?:               # Group host alternatives.
+	  youtu\.be/      # Either youtu.be,
+	| youtube\.com    # or youtube.com followed by
+	  \S*             # Allow anything up to VIDEO_ID,
+	  [^\w\-\s]       # but char before ID is non-ID char.
+	)                 # End host alternatives.
+	([\w\-]{11})      # $1: VIDEO_ID is exactly 11 chars.
+	(?=[^\w\-]|$)     # Assert next char is non-ID or EOS.
+	(?!               # Assert URL is not pre-linked.
+	  [?=&amp;+%;\w]*     # Allow URL (query) remainder.**
+	  (?:             # Group pre-linked alternatives.
+		[\'"][^&lt;&gt;]*&gt;  # Either inside a start tag,
+	  | &lt;/a&gt;          # or inside &lt;a&gt; element text contents.
+	  )               # End recognized pre-linked alts.
+	)                 # End negative lookahead assertion.
+	[?=&amp;+%;\w]*       # Consume any URL (query) remainder.**
+	~ix', 
+	'\\1&lt;div class="forumvideo video"&gt;&lt;iframe src="http://www.youtube.com/embed/\\2" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div class="forumvideotagline"&gt;&lt;a class="postlink youtu ficon" href="http://youtu.be/\\2" target="_blank"&gt;youtu.be/\\2&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;',
+	$ret);
+	</pre>
+	<p>At this point you can upload and the mod should be working, although there is one customization you may want to make first; choosing the size and position of these &quot;EasyTube&quot; videos. To do so, change the class of the <code>&lt;div&gt;</code> that wraps the iframe to one of the following classes: video, video-small, video-medium, video-large, video-left, video-right, video-center, video-small-left, video-small-right, video-small-center, video-medium-left, video-medium-right, video-medium-center, video-large-left, video-large-right, video-large-center.</p>
+	<h5><span class="icon small darkgray" data-icon="s"></span> Find <a class="small button" onclick="SelectText('somemail')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="somemail">	'\\1&lt;div class="forumvideo video"&gt;&lt;iframe src="http://www.youtube.com/embed/\\2" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</pre>
+	<h5><span class="icon small darkgray" data-icon="+"></span> EXAMPLE REPLACE <a class="small button" onclick="SelectText('edit6b')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="edit6b">	'\\1&lt;div class="forumvideo video-large-center"&gt;&lt;iframe src="http://www.youtube.com/embed/\\2" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</pre>
+	<p>Which would produce a large centered video for all &quot;EasyTube&quot; videos. Info regarding customizing the size and position of all videos is provided on the final step of installation. If you need to test EasyTube use the URL's below as it should match all included URL patterns</p>
+	<h5><span class="icon small darkgray" data-icon="?"></span> TEST URLs <a class="small button" onclick="SelectText('testbed')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="testbed">http://youtu.be/NLqAF9hrVbY http://www.youtube.com/embed/NLqAF9hrVbY https://www.youtube.com/embed/NLqAF9hrVbY http://www.youtube.com/v/NLqAF9hrVbY?fs=1&hl=en_US http://www.youtube.com/v/NLqAF9hrVbY?fs=1&hl=en_US http://www.youtube.com/watch?v=NLqAF9hrVbY http://www.youtube.com/user/Scobleizer#p/u/1/1p3vcRhsYGo http://www.youtube.com/ytscreeningroom?v=NRHVzbJVx8I http://www.youtube.com/sandalsResorts#p/c/54B8C800269D7C1B/2/PPS-8DMrAn4 http://gdata.youtube.com/feeds/api/videos/NLqAF9hrVbY</pre>
+	<button class="small green"><span class="icon" data-icon="o"></span> Edit Complete</button> <button class="small blue"><span class="icon" data-icon="c"></span> Save File</button> <button class="small orange"><span class="icon" data-icon=")"></span> Upload File</button> <button class="small red"><span class="icon" data-icon="!"></span> Mod Complete</button>
+	<hr class="alt1" />
+	
+	<h3><span class="icon large" data-icon="B"></span> Tricked Out News #hashtag Mod</h3>
+	<p>Adds a Twitter like hashtag mod for your <a class="postlink" href="http://www.ravennuke.com/" target="_blank">RavenNuke</a>&#153; forum. If you are not familiar with hashtags, they are any SINGLE word that you place the # sign in front of, to link to a keyword search in the forum. Although it functions in a similar manner to that of the newly added <code>[tag]term[/tag]</code> it makes a nice shorthand compliment for quickly tagging desired posts. Not to mention, installation only requires one additional line of code!</p>
+	<h4>Install</h4>
+	<div style="border: 1px dashed #cccccc;padding-left:10px;margin-bottom:20px">
+	<ul class="breadcrumbs alt1">
+	<li><a href="javascript:demos();"><span class="tooltip" title="Your Server">yoursite.com</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="modules Directory">modules</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="Forums Directory">Forums</span></a></li>
+	<li><a href="javascript:demos();"><span class="tooltip" title="File To Edit">viewtopic.php</span></a></li>
+	</ul>
+	</div>
+	<p>PRE-EDITED file available at <code>extras/Hashtag/viewtopic.php</code></p>
+	<h5><span class="icon small darkgray" data-icon="s"></span> Find <a class="small button" onclick="SelectText('hashtag1')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="hashtag1"> $message = $postrow[$i]['post_text'];</pre>
+	<h5><span class="icon small darkgray" data-icon="+"></span> After Add (on a new line) <a class="small button" onclick="SelectText('hashtag2')"><span class="icon" data-icon="v"></span>select</a></h5>
+	<pre id="hashtag2">&nbsp;$message = preg_replace('/(^|\s)#([a-z0-9_-]{3,}+)/i', '$1&lt;a href="modules.php?name=Forums&amp;amp;file=search&amp;amp;search_keywords=$2&amp;amp;mode=results"&gt;#$2&lt;/a&gt;', $message);</pre>
+	<button class="small green"><span class="icon" data-icon="o"></span> Edit Complete</button> <button class="small blue"><span class="icon" data-icon="c"></span> Save File</button> <button class="small orange"><span class="icon" data-icon=")"></span> Upload File</button> <button class="small red"><span class="icon" data-icon="!"></span> Mod Complete</button>
+	<hr class="alt1" />
+	<a class="btn large green" href="customize.html"><span class="icon" data-icon=";"></span>I'm done here, PROCEED to the FINAL STEP</a>
+	</div>
+	
+	<hr />
+	<div class="col_4">
+	<h6>ABBC Box</h6>
+	<a href="customize.html#devs" class="tooltip" title="Poochy needs a doggie wheelchair"><img class="align-left" src="mini-poochy.png" alt="Poochy" width="35" height="64" /></a>
+	<p><strong>If you find this mod useful please show your support with a small <a href="customize.html#devs">donation</a> for Poochy</strong></p>
+	<p>Special thanks to the original authors of ABBC Box</p>
+	<p><a href="http://www.hvmdesign.com" target="_blank">Disturbed One</a> (Anthony Coy)<br />
+	<a href="http://www.tnen.zzn.com" target="_blank">AL Tnen</a> (N/A)<br />
+	<a href="http://www.tactic.be" target="_blank">freddie</a> (Stefaan Van Damme)</p>
+	<p>As well as many others who have contributed over time</p>
+	<h6>Browser Support</h6>
+	<p>
+	<img width="31" height="30" class="tooltip-top" title="Internet Explorer" alt="Internet Explorer" src="compatible_ie.gif">
+	<img width="31" height="30" class="tooltip-top" title="Firefox" alt="Firefox" src="compatible_firefox.gif">
+	<img width="28" height="30" class="tooltip-top" title="Opera" alt="Opera" src="compatible_opera.gif">
+	<img width="31" height="30" class="tooltip-top" title="Google Chrome" alt="Google Chrome" src="compatible_chrome.gif">
+	<img width="28" height="30" class="tooltip-top" title="Safari" alt="Safari" src="compatible_safari.gif">
+	</p>
+	</div>
+	
+	<div class="col_5">
+
+	<h6>Featuring</h6>
+	<ul class="checks">
+	<li><a href="http://www.sitepoint.com/build-auto-expanding-textarea-1/" target="_blank">Auto Expanding Textarea</a>
+		<ul class="alt">
+		<li>By Craig Buckler, Optimalworks.net</li>
+		</ul>
+	</li>
+	<li><a href="http://jscolor.com/" target="_blank">JavaScript Color Picker</a>
+		<ul class="alt">
+		<li>JScolor native JavaScript color picker</li>
+		</ul>
+	</li>
+	<li><a href="http://www.fatcow.com/free-icons" target="_blank">FatCow Hosting Icons</a>
+		<ul class="alt">
+		<li>Huge free icon set</li>
+		</ul>
+	</li>
+	<li><a href="http://icondock.com/free/vector-social-media-icons" target="_blank">Vector Social Media Icons</a>
+		<ul class="alt">
+		<li>by IconDock.com &amp; Double-J Design</li>
+		</ul>
+	</li>
+	</ul>
+	</div>
+	
+	<div class="col_3">
+	<h6>Release History</h6>
+	<ul class="checks">
+	<li>Version RN2.50 (2012)</li>
+	<li>Version RN24_01 (2010)</li>
+	<li>Version RN2.30 (2008)</li>
+	<li>Version 5.1.0c (2007)</li>
+	<li>Version 5.0.0 (2005)</li>
+	<li>Version 5.0.0 (2005)</li>
+	<li>Version 5.0.0 (2005)</li>
+	<li>Version 5.1.0 (2007)</li>
+	<li>Version 5.0.0a (2005)</li>
+	<li>Version 5.0.0 (2005)</li>
+	</ul>
+	</div>
+</div>
+
+<!-- ===================================== START FOOTER ===================================== -->
+<div class="clear"></div>
+<div id="footer">
+&copy; Copyright 2004–2012 All Rights Reserved. This Install Guide was built with <a href="http://www.99lime.com">HTML KickStart</a><br/>
+Advanced BBCode Box RN 2.5 by Jason Tate aka SpasticDonkey.<br/>
+Background Image By Alchemist-hp [<a href="http://artlibre.org/licence/lal/en">FAL</a>] via <a href="http://commons.wikimedia.org/wiki/File%3ALake_Bondhus_Norway_2862.jpg">Wikimedia Commons</a>
+<p><a class="btn blue" href="http://www.facebook.com/AdvancedBBCodeBoxForRavenNuke"><span class="icon social" data-icon="F"></span> Like ABBC Box on Facebook</a></p>
+<a id="link-top" href="#top-of-page">Top</a>
+</div>
+
+</div><!-- END WRAP -->
+</body></html>
