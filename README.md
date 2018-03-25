@@ -4,6 +4,7 @@ Improved UI and CSS layout which can be customized per theme. Four sprite powere
 
 Several optional addons are included to further enhance your RavenNuke(tm) powered site; which allows you to add code highlighting, link icons, easy youtube videos, and/or hashtags.
 
+Patched/modded in 2018 for RavenNuke(tm) by neralex.
 Patched/modded in 2012 for RavenNuke(tm) by Spasticdonkey.
 
 Special thanks to the original authors of ABBC Box:
