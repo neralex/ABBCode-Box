@@ -1,4 +1,4 @@
-PHPBB2 Forum BBCode Modification for RavenNuke(tm) v2.5, which expands the standard BBCode features to allow: audio/video embeds, text formatting/styling options, image/video positioning, dynamic twitter signatures, customizable color swatches, inline ajax help, forum search "tags", modal search functions for wikipedia and duckduckgo, as well as various other features.
+PHPBB2 Forum BBCode Modification for RavenNuke(tm) v2.5.2, which expands the standard BBCode features to allow: audio/video embeds, text formatting/styling options, image/video positioning, dynamic twitter signatures, customizable color swatches, inline ajax help, forum search "tags", modal search functions for wikipedia and duckduckgo, as well as various other features.
 
 Improved UI and CSS layout which can be customized per theme. Four sprite powered editor themes included in sand, light blue, crimson, and black; or build your own with a little CSS know-how and the included photoshop files.
 
