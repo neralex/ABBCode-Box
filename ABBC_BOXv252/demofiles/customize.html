@@ -245,13 +245,13 @@ div.audio iframe,div.audio-left iframe,div.audio-right iframe,div.audio-center i
 			A couple of different loading animations are used within the mod, and since there is no way to define them by CSS; if you desire to customize them you must edit the template(s).
 		</p>
 		<p>
-			An animated png (apng) is used for the twitter signature which is still not widely supported by all browsers, but works well on both light and dark backgrounds; and defaults to the first frame of animation for unsupported browsers. To replace with another image search for <code>mods/bbcode_box/images/76.png</code> (bbcode.tpl) and replace with a loading animation of your choosing.
+			An animated png (apng) is used for the twitter signature which is still not widely supported by all browsers, but works well on both light and dark backgrounds; and defaults to the first frame of animation for unsupported browsers. To replace with another image search for <code>includes/bbcode_box/images/76.png</code> (bbcode.tpl) and replace with a loading animation of your choosing.
 		</p>
-		<img src="../root/mods/bbcode_box/images/76.png" alt="sample animation"/><img style="background-color:#000000" src="../root/mods/bbcode_box/images/76.png" alt="sample animation" /> &lt;- If your browser supports apng you will see animation here
+		<img src="../root/includes/bbcode_box/images/76.png" alt="sample animation"/><img style="background-color:#000000" src="../root/includes/bbcode_box/images/76.png" alt="sample animation" /> &lt;- If your browser supports apng you will see animation here
 		<p>
-			The other animation is used for loading the ajax help into the editor, and is a traditional animated gif. To replace with another image search for <code>mods/bbcode_box/images/helpload.gif</code> (posting_body.tpl, occurs multiple times) and replace with a loading animation of your choosing... Unless you want to make various CSS changes it would be a good idea to keep the same size on this loading animation as that of the default one (41x20).
+			The other animation is used for loading the ajax help into the editor, and is a traditional animated gif. To replace with another image search for <code>includes/bbcode_box/images/helpload.gif</code> (posting_body.tpl, occurs multiple times) and replace with a loading animation of your choosing... Unless you want to make various CSS changes it would be a good idea to keep the same size on this loading animation as that of the default one (41x20).
 		</p>
-		<img src="../root/mods/bbcode_box/images/helpload.gif" alt="sample animation" /><img style="background-color:#000000" src="../root/mods/bbcode_box/images/helpload.gif" alt="sample animation" /> &lt;- Light/Dark support isn't as good with GIF's
+		<img src="../root/includes/bbcode_box/images/helpload.gif" alt="sample animation" /><img style="background-color:#000000" src="../root/includes/bbcode_box/images/helpload.gif" alt="sample animation" /> &lt;- Light/Dark support isn't as good with GIF's
 		<p>
 			Both default animations were created at <a href="http://preloaders.net/en/horizontal" target="_blank">preloaders.net/en/horizontal</a> which is a great resource if you are looking for a custom loading animation to match your theme.
 		</p>
@@ -271,7 +271,7 @@ div.audio iframe,div.audio-left iframe,div.audio-right iframe,div.audio-center i
 		<p>
 			While it is best to customize a sprite image if you are adding buttons, not everyone has access to Photoshop; so there is a method to add standard icons that can still match the editor style to some degree. Take a look at how the smilies toggle button was done in the editor for an example. You'll notice the button is actually a div that has a blank button background, with an animated gif inside... it's also the div that has toggle effects applied to it as well. Look for <code>#abbcsmiles</code> and <code>.abbcshim</code> within <code>bbcode_box.css</code>; as well as the JavaScript function <code>BBCemostatus()</code> to see how this was accomplished.
 		</p>
-		<pre>&lt;div class="postimage bbc-inactive" id="abbcsmiles" onclick="BBCemostatus()" onmouseover="helpline('abbcsmiles')"&gt;&lt;img class="abbcshim" src="mods/bbcode_box/images/icon_rolleyes.gif" alt="" /&gt;&lt;/div&gt;</pre>
+		<pre>&lt;div class="postimage bbc-inactive" id="abbcsmiles" onclick="BBCemostatus()" onmouseover="helpline('abbcsmiles')"&gt;&lt;img class="abbcshim" src="includes/bbcode_box/images/icon_rolleyes.gif" alt="" /&gt;&lt;/div&gt;</pre>
 
 		<h5>JavaScript and Custom Classes</h5>
 		<p>
